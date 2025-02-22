@@ -1,23 +1,20 @@
-package OOP6baitap;
-public class Main2 {
-	 public static void main(String[] args) {
-	        MovablePoint point = new MovablePoint(2, 3, 1, 1);
-	        System.out.println(point);
-	        point.moveUp();
-	        System.out.println(point);
-	        point.moveRight();
-	        System.out.println(point);
+package OOP6baitap2;
 
-	        MovableRectangle rectangle = new MovableRectangle(0, 10, 10, 0, 2, 2);
-	        System.out.println(rectangle);
-	        rectangle.moveUp();
-	        System.out.println(rectangle);
-	        rectangle.moveRight();
-	        System.out.println(rectangle);
-	        MovableCircle circle = new MovableCircle(5, 5, 2, 2, 10);
-	        System.out.println(circle);
-	        circle.moveUp();
-	        circle.moveLeft();
-	        System.out.println(circle);
-	    }
+public class Main2 {
+	public static void main(String[] args) {
+        MovablePoint point = new MovablePoint(0, 0, 2, 3);
+        System.out.println(point);
+        
+        point.moveUp();
+        System.out.println("After moveUp: " + point);
+        
+        point.moveRight();
+        System.out.println("After moveRight: " + point);
+        
+        point.moveDown();
+        System.out.println("After moveDown: " + point);
+        
+        point.moveLeft();
+        System.out.println("After moveLeft: " + point);
+    }
 }

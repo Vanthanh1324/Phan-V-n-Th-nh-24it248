@@ -1,33 +1,37 @@
-package OOP6baitap;
+package OOP6baitap2;
 
-public class Circle extends Shape {
- protected double radius = 1.0;
+public class Circle implements GeometricObject {
+    protected double radius;
 
- public Circle() {}
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+    public double getArea() {
+        return Math.PI * radius * radius;
+    }
+    public double getPerimeter() {
+        return 2 * Math.PI * radius;
+    }
 
- public Circle(double radius) {
-     this.radius = radius;
- }
- public Circle(double radius, String color, boolean filled) {
-     super(color, filled);
-     this.radius = radius;
- }
+    public String toString() {
+        return "Circle[radius=" + radius + "]";
+    }
+}
+class Rectangle implements GeometricObject {
+    private double width;
+    private double length;
 
- public double getRadius() {
-     return radius;
- }
-
- public void setRadius(double radius) {
-     this.radius = radius;
- }
-
- public double getArea() {
-     return Math.PI * radius * radius;
- }
- public double getPerimeter() {
-     return 2 * Math.PI * radius;
- }
- public String toString() {
-     return "Circle[" + super.toString() + ", radius=" + radius + "]";
- }
+    public Rectangle(double width, double length) {
+        this.width = width;
+        this.length = length;
+    }
+    public double getArea() {
+        return width * length;
+    }
+    public double getPerimeter() {
+        return 2 * (width + length);
+    }
+    public String toString() {
+        return "Rectangle[width=" + width + ", length=" + length + "]";
+    }
 }

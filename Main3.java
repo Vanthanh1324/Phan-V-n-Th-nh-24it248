@@ -1,11 +1,17 @@
-package OOP4baitap;
+package OOP6baitap2;
 
 public class Main3 {
-	    public static void main(String[] args) {
-	        Point2D point2D = new Point2D(3.5f, 4.5f);
-	        System.out.println(point2D);
+	 public static void main(String[] args) {
+	        Circle circle = new Circle(10);
+	        System.out.println(circle);
+	        System.out.println("Perimeter: " + circle.getPerimeter());
+	        System.out.println("Area: " + circle.getArea());
 
-	        Point3D point3D = new Point3D(1.2f, 3.4f, 5.6f);
-	        System.out.println(point3D);
+	        ResizableCircle resizableCircle = new ResizableCircle(10);
+	        System.out.println(resizableCircle);
+	        resizableCircle.resize(50); // Reduce size by 50%
+	        System.out.println("After resize: " + resizableCircle);
+	        System.out.println("New Perimeter: " + resizableCircle.getPerimeter());
+	        System.out.println("New Area: " + resizableCircle.getArea());
 	    }
 	}

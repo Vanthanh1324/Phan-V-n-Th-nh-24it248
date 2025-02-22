@@ -1,18 +1,16 @@
-package OOP6baitap;
+package OOP6baitap2;
 
 public class Main {
 	 public static void main(String[] args) {
-	     Animal cat = new Cat("Kitty");
-	     cat.greets();
+	        GeometricObject circle = new Circle(5);
+	        GeometricObject rectangle = new Rectangle(4, 6);
 
-	     Dog dog = new Dog("Buddy");
-	     dog.greets();
+	        System.out.println(circle);
+	        System.out.println("Circle Area: " + circle.getArea());
+	        System.out.println("Circle Perimeter: " + circle.getPerimeter());
 
-	     BigDog bigDog = new BigDog("Max");
-	     bigDog.greets();
-
-	     dog.greets(new Dog("Charlie"));
-	     bigDog.greets(new Dog("Rocky"));
-	     bigDog.greets(new BigDog("Bruno"));
-	 }
+	        System.out.println(rectangle);
+	        System.out.println("Rectangle Area: " + rectangle.getArea());
+	        System.out.println("Rectangle Perimeter: " + rectangle.getPerimeter());
+	    }
 }
