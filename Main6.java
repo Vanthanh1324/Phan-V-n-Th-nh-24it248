@@ -1,25 +1,24 @@
-package OPP2baitap;
+package OOP3baitap;
 
 public class Main6 {
-    public static void main(String[] args) {
-	        MyPoint p1 = new MyPoint(1, 2);
-	        MyPoint p2 = new MyPoint(4, 6);
+public static void main(String[] args) {
+	 FootBall ball = new FootBall(50, 50, 0);
+     Player player1 = new Player(7, 48, 49);
+     Player player2 = new Player(10, 30, 30);
 
-	        MyLine line1 = new MyLine(p1, p2);
-	        MyLine line2 = new MyLine(0, 0, 3, 4);
+     System.out.println(ball);
+     System.out.println(player1);
+     System.out.println(player2);
 
-	        System.out.println(line1);
-	        System.out.println(line2);
+     player1.move(2, 1);
+     System.out.println("After moving: " + player1);
 
-	        System.out.println("Begin X của line1: " + line1.getBeginX());
-	        System.out.println("End Y của line1: " + line1.getEndY());
+     player1.jump(2);
+     System.out.println("After jumping: " + player1);
 
-	        line1.setBeginXY(2, 3);
-	        System.out.println("Sau khi đổi begin của line1: " + line1);
+     player1.kick(ball);
+     System.out.println("After kick: " + ball);
 
-	        System.out.println("Chiều dài line1: " + line1.getLength());
-	        System.out.println("Độ dốc line1 (radian): " + line1.getGradient());
-	    }
-	}
-
-
+     player2.kick(ball);
+ }
+}

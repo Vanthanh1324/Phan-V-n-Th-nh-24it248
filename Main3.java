@@ -1,28 +1,31 @@
-package OPP2baitap;
+package OOP3baitap;
 
 public class Main3 {
 public static void main(String[] args) {
-	  Customer c1 = new Customer(88, "Tan Ah Teck", 10);
-      System.out.println(c1);  // Customer's toString()
+	MyTime time1 = new MyTime(12, 30, 45);
+    System.out.println("Time 1: " + time1);
 
-      c1.setDiscount(8);
-      System.out.println(c1);
-      System.out.println("id is: " + c1.getId());
-      System.out.println("name is: " + c1.getName());
-      System.out.println("discount is: " + c1.getDiscount());
+    time1.nextSecond();
+    System.out.println("Time 1 after nextSecond(): " + time1);
 
-      // Test Invoice class
-      Invoice inv1 = new Invoice(101, c1, 888.8);
-      System.out.println(inv1);
+    time1.nextMinute();
+    System.out.println("Time 1 after nextMinute(): " + time1);
 
-      inv1.setAmount(999.9);
-      System.out.println(inv1);
-      System.out.println("id is: " + inv1.getId());
-      System.out.println("customer is: " + inv1.getCustomer());  // Customer's toString()
-      System.out.println("amount is: " + inv1.getAmount());
-      System.out.println("customer's id is: " + inv1.getCustomerId());
-      System.out.println("customer's name is: " + inv1.getCustomerName());
-      System.out.println("customer's discount is: " + inv1.getCustomerDiscount());
-      System.out.printf("amount after discount is: %.2f%n", inv1.getAmoutAferDiscout());
-   }
+    time1.nextHour();
+    System.out.println("Time 1 after nextHour(): " + time1);
+
+    time1.previousSecond();
+    System.out.println("Time 1 after previousSecond(): " + time1);
+
+    time1.previousMinute();
+    System.out.println("Time 1 after previousMinute(): " + time1);
+
+    time1.previousHour();
+    System.out.println("Time 1 after previousHour(): " + time1);
+
+    MyTime time2 = new MyTime(23, 59, 59);
+    System.out.println("Time 2: " + time2);
+    time2.nextSecond();
+    System.out.println("Time 2 after nextSecond(): " + time2);
+}
 }

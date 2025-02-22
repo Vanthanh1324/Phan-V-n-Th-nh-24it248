@@ -1,30 +1,67 @@
-package OPP2baitap;
+package OOP3baitap;
 
 public class Main4 {
 public static void main(String[] args) {
-	Customer customer1 = new Customer(1001, "John Doe", 'm');
-    Customer customer2 = new Customer(1002, "Jane Smith", 'f');
+	MyDate date1 = new MyDate(2023, 10, 26);
+    System.out.println("Date 1: " + date1);
 
-    Account account1 = new Account(1, customer1, 100.0);
-    Account account2 = new Account(2, customer2);
+    System.out.println("Next day: " + date1.nextDay());
+    System.out.println("Next month: " + date1.nextMonth());
+    System.out.println("Next year: " + date1.nextYear());
 
-    System.out.println("Account 1: " + account1);
-    System.out.println("Account 2: " + account2);
+    System.out.println("Previous day: " + date1.previousDay());
+    System.out.println("Previous month: " + date1.previousMonth());
+    System.out.println("Previous year: " + date1.previousYear());
 
-    account1.deposit(50.0);
-    System.out.println("Account 1 after deposit: " + account1);
+    MyDate date2 = new MyDate(2024, 2, 28);
+    System.out.println("Date 2: " + date2);
+    System.out.println("Next day (leap year): " + date2.nextDay());
+    System.out.println("Next month (leap year): " + date2.nextMonth());
 
-    account2.deposit(200.0);
-    account2.withdraw(100.0);
-    System.out.println("Account 2 after deposit and withdraw: " + account2);
+    MyDate date3 = new MyDate(2023, 12, 31);
+    System.out.println("Date 3: " + date3);
+    System.out.println("Next day (year change): " + date3.nextDay());
+    System.out.println("Next month (year change): " + date3.nextMonth());
 
-    account1.withdraw(200.0); // Should print "amount withdrawn exceeds the current balance!"
-    System.out.println("Account 1 after invalid withdraw: " + account1);
+    MyDate date4 = new MyDate(2023, 1, 1);
+    System.out.println("Date 4: " + date4);
+    System.out.println("Previous day (year change): " + date4.previousDay());
+    System.out.println("Previous month (year change): " + date4.previousMonth());
+    System.out.println("Previous year: " + date4.previousYear());
 
-    System.out.println("Customer name of Account 2: " + account2.getCustomerName());
+    MyDate date5 = new MyDate(2023, 3, 31);
+    System.out.println("Date 5: " + date5);
+    System.out.println("Previous month (day change): " + date5.previousMonth());
 
-    account2.setBalance(500.0);
-    System.out.println("Account 2 after setBalance: " + account2);
+    MyDate date6 = new MyDate(2024, 3, 31);
+    System.out.println("Date 6: " + date6);
+    System.out.println("Previous month (leap year day change): " + date6.previousMonth());
 
+    MyDate date7 = new MyDate(2023, 1, 31);
+    System.out.println("Date 7: " + date7);
+    System.out.println("Next month (day change): " + date7.nextMonth());
+
+    MyDate date8 = new MyDate(2024, 1, 31);
+    System.out.println("Date 8: " + date8);
+    System.out.println("Next month (leap year day change): " + date8.nextMonth());
+
+    // Test invalid dates
+    try {
+        new MyDate(2023, 13, 1);
+    } catch (IllegalArgumentException e) {
+        System.out.println("Exception: " + e.getMessage());
+    }
+
+    try {
+        new MyDate(2023, 2, 29);
+    } catch (IllegalArgumentException e) {
+        System.out.println("Exception: " + e.getMessage());
+    }
+
+    try {
+        date1.setDate(2023, 1, 32);
+    } catch (IllegalArgumentException e) {
+        System.out.println("Exception: " + e.getMessage());
+    }
 }
 }
