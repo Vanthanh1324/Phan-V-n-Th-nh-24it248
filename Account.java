@@ -1,49 +1,46 @@
-package OPP6;
+package OPP2baitap;
 
 public class Account {
-private String id;
-private String name;
-private int balance=0;
-public Account(String id,String name) {
+private int id;
+private Customer custromer;
+private double balance=0.0;
+public Account(int id,Customer customer,double balance) {
 	this.id=id;
-	this.name=name;
+	this.balance=balance;
+	this.custromer=customer;
 }
-public Account(String id, String name, int balance) {
-    this.id = id;
-    this.name = name;
-    this.balance = balance;
+public Account(int id,Customer customer) {
+	this.id=id;
+	this.custromer=customer;
 }
-public String getId() {
+public int getId() {
 	return id;
 }
-public String getName() {
-	return name;
+public Customer getCustromer() {
+	return custromer;
 }
-public int getBalance() {
+public double getBalance() {
 	return balance;
 }
-public int credit(int amount) {
-	balance+=amount;
-	return amount;
-}
-public int debit(int amount) {
-	if(amount>balance) {
-		balance -=amount;
-	}else {
-		System.out.println("Amount exceeded balance");
-	}
-	return balance;
-}
-public int transferTo(Account another,int amount) {
-	if(amount<=balance) {
-		this.debit(amount);
-		another.credit(amount);
-	}else {
-		System.out.println("Amount exceeded balance");
-	}
-	return balance;
+public void setBalance(double balance) {
+	this.balance = balance;
 }
 public String toString() {
-	return "Account[id=" + id + ",name=" + name + ",balance=" + balance + "]";
+	return custromer.toString() + " balance=$" + String.format("%.2f", balance);
+}
+public String getCustomerName() {
+	return custromer.getName();
+}
+public Account deposit(double amount) {
+	balance+= amount;
+	return this;
+}
+public Account withdraw(double amount) {
+	if(balance>=amount) {
+		balance-=amount;
+	}else {
+		System.out.println("amount withdrawn exceeds the current balance!");
+	}
+	return this;
 }
 }
