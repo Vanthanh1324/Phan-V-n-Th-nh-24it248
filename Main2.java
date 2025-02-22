@@ -1,20 +1,14 @@
-package OOP3baitap;
+package OOP4baitap;
 
 public class Main2 {
-public static void main(String[] args) {
-	MyPolynomial p1 = new MyPolynomial(1, 2, 3); 
-    MyPolynomial p2 = new MyPolynomial(1, -1); 
+	    public static void main(String[] args) {
+	        Person person = new Person("Alice", "123 Main St");
+	        System.out.println(person);
 
-    System.out.println("p1: " + p1);
-    System.out.println("p2: " + p2);
+	        Student student = new Student("Bob", "456 College Rd", "Computer Science", 2, 5000.0);
+	        System.out.println(student);
 
-    System.out.println("Degree of p1: " + p1.getDegree());
-    System.out.println("p1(2): " + p1.evaluate(2));
-
-    MyPolynomial sum = p1.add(p2);
-    System.out.println("p1 + p2: " + sum);
-
-    MyPolynomial product = p1.multiply(p2);
-    System.out.println("p1 * p2: " + product);
-}
-}
+	        Staff staff = new Staff("Charlie", "789 School St", "XYZ High School", 45000.0);
+	        System.out.println(staff);
+	    }
+	}

@@ -1,24 +1,22 @@
-package OOP3baitap;
+package OOP4baitap;
 
 public class Main6 {
-public static void main(String[] args) {
-	 FootBall ball = new FootBall(50, 50, 0);
-     Player player1 = new Player(7, 48, 49);
-     Player player2 = new Player(10, 30, 30);
+	public static void main(String[] args) {
+        Animal animal = new Animal("GenericAnimal");
+        System.out.println(animal);
 
-     System.out.println(ball);
-     System.out.println(player1);
-     System.out.println(player2);
+        Mammal mammal = new Mammal("Mammal1");
+        System.out.println(mammal);
 
-     player1.move(2, 1);
-     System.out.println("After moving: " + player1);
+        Cat cat = new Cat("Kitty");
+        System.out.println(cat);
+        cat.greets();
 
-     player1.jump(2);
-     System.out.println("After jumping: " + player1);
+        Dog dog1 = new Dog("Buddy");
+        Dog dog2 = new Dog("Rocky");
 
-     player1.kick(ball);
-     System.out.println("After kick: " + ball);
-
-     player2.kick(ball);
- }
+        System.out.println(dog1);
+        dog1.greets();
+        dog1.greets(dog2); 
+    }
 }
