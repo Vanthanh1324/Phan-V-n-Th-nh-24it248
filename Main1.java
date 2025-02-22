@@ -1,13 +1,17 @@
-package OOP4baitap;
+package OOP7baitap;
+
+import java.util.Date;
 
 public class Main1 {
-	public static void main(String[] args) {
-        Circle circle = new Circle(5.0, "blue");
-        System.out.println(circle);
-        System.out.println("Area: " + circle.getArea());
+	    public static void main(String[] args) {
+	        Customer customer = new Customer("John Doe");
+	        customer.setMember(true);
+	        customer.setMemberType("Gold");
 
-        Cylinder cylinder = new Cylinder(5.0, 10.0, "green");
-        System.out.println(cylinder);
-        System.out.println("Volume: " + cylinder.getVolume());
-    }
+	        Visit visit = new Visit(customer.getName(), new Date());
+	        visit.setServiceExpense(100);
+	        visit.setProductExpense(50);
+
+	        System.out.println(visit);
+	    }
 }
